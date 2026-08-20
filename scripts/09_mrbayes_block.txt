@@ -1,0 +1,9 @@
+
+begin mrbayes;
+   set autoclose=yes nowarn=yes;
+   lset nst=2 rates=equal coding=variable;
+   prset statefreqpr=dirichlet(1,1,1,1);
+   mcmc ngen=2000000 nchains=4 samplefreq=1000 printfreq=1000 diagnfreq=10000 burninfrac=0.25;
+   sump burnin=500;
+   sumt burnin=500;
+end;
